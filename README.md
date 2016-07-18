@@ -23,6 +23,17 @@ python setup.py develop
  ckan.plugins = datastore ... updatetracking
 ```
 ## Usage
+Fill in the ``updateconfig.cfg`` with the appropriate values like so
+```
+[DATASET]
+dataset= Your CKAN dataset ID (examples: tracking or site-usage)
+filename=tracking.csv
+
+[CKAN]
+api= Your ckan API key, must be able to update the given resource
+site= Your CKAN site (example: http://demo.ckan.org)
+
+```
 The extension creates a command for periodical update of the Datastore. To execute the command periodically, add following cron job:
 
 ### Cron job daily at 03:55
