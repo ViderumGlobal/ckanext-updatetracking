@@ -1,0 +1,9 @@
+
+        [ckan.plugins]
+        updatetracking=ckanext.updatetracking.plugin:UpdatetrackingPlugin
+	[ckan.test_plugins]
+	    [paste.paster_command]
+	    update=ckanext.updatetracking.commands:Update
+	[babel.extractors]
+	ckan = ckan.lib.extract:extract_ckan
+    
