@@ -43,7 +43,8 @@ class Update(CkanCommand):
 		try:
 		   file = open(FILENAME,'rb')
 		except:
-		   print("File was not found")
+		   print("File was not found, creating it...")
+		   file = open(FILENAME, 'w')
 
 		config_file_location = ckan_config['__file__']
 
