@@ -58,6 +58,8 @@ class Update(CkanCommand):
 			sys.exit()
 		for i in dataset["resources"]:
 			url = i["url"]
+			if not url:
+				url = FILENAME.split('/')[-1]
 			ckan.action.resource_update(id=i["id"],package_id=i["package_id"],url=i["url"],upload=file,name=file.name,format=i["format"])
 			#Trigger the datapusher hook the dirty way
 			ckan.action.resource_update(id=i["id"],package_id=i["package_id"],name=file.name,format=i["format"],url=i["url"]+"&")
